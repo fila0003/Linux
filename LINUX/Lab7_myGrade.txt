@@ -1,0 +1,38 @@
+#!/bin/bash
+echo -e "Evgenii Filatov\n40852239\n20f_CST8102_320\nNOV/25/2020"
+echo -e "Calculate the final grade and display the letter grade for a course\n"
+
+# Enter marks for Assignment, Tests 1,2 and Final exam
+echo "Enter Assignment mark (0 - 40):"
+read assignmentsMark
+echo "Enter Test1 mark (0 - 15):"
+read test1Mark
+echo "Enter Test2 mark (0 - 15):"
+read test2Mark
+echo "Enter Final exam mark (0 - 30):"
+read finalExamMark
+
+#calculate total mark
+total=`expr $assignmentsMark + $test1Mark + $test2Mark + $finalExamMark`
+
+#display numeric grade and the letter grade for a course
+case $total in
+           100) echo "Your final numeric grade is $total, and your final grade is A+" ;;
+	9[0-9]) echo "Your final numeric grade is $total, and your final grade is A+" ;;
+        8[5-9]) echo "Your final numeric grade is $total, and your final grade is A" ;;
+        8[0-4]) echo "Your final numeric grade is $total, and your final grade is A-" ;;
+        7[7-9]) echo "Your final numeric grade is $total, and your final grade is B+" ;;
+        7[3-6]) echo "Your final numeric grade is $total, and your final grade is B" ;;
+        7[0-2]) echo "Your final numeric grade is $total, and your final grade is B-" ;;
+        6[7-9]) echo "Your final numeric grade is $total, and your final grade is C+" ;;
+        6[3-6]) echo "Your final numeric grade is $total, and your final grade is C" ;;
+        6[0-2]) echo "Your final numeric grade is $total, and your final grade is C-" ;;
+        5[7-9]) echo "Your final numeric grade is $total, and your final grade is D+" ;;
+        5[3-6]) echo "Your final numeric grade is $total, and your final grade is D" ;;
+        5[0-2]) echo "Your final numeric grade is $total, and your final grade is D-" ;;
+        4[0-9]) echo "Your final numeric grade is $total, and your final grade is F" ;;
+        3[0-9]) echo "Your final numeric grade is $total, and your final grade is F" ;;
+        2[0-9]) echo "Your final numeric grade is $total, and your final grade is F" ;;
+        1[0-9]) echo "Your final numeric grade is $total, and your final grade is F" ;;
+         [0-9]) echo "Your final numeric grade is $total, and your final grade is F" ;;
+esac

@@ -1,0 +1,31 @@
+#!/bin/sh
+# taking user input and storing inside the variables 
+echo " Evgenii Filatov \n40852239 \n20f_CST8102_320 \nEnter marks for the following grade items.\n"
+echo "Enter the Assignments mark (0 - 40):"
+read assignmentsMark
+echo "Enter the Test1 mark (0 - 15):"
+read test1Mark
+echo "Enter the Test2 mark (0 - 15):"
+read test2Mark
+echo "Enter the Final Exam mark (0 - 30):"
+read finalExamMark
+# calculating total mark in %
+total=`expr $assignmentsMark + $test1Mark + $test2Mark + $finalExamMark`
+echo "total is $total"
+
+case $total in
+        100) echo "Your final grade is A+" ;;
+	9[0-9]) echo "Your final grade A+" ;;
+        8[5-9]) echo "Your final grade is A" ;;
+        8[0-4]) echo "Your final grade is A-" ;;
+        7[7-9]) echo "Your final grade is B+" ;;
+        7[3-6]) echo "Your final grade is B" ;;
+        7[0-2]) echo "Your final grade is B-" ;;
+        6[7-9]) echo "Your final grade is C+" ;;
+        6[3-6]) echo "Your final grade is C" ;;
+        6[0-2]) echo "Your final grade is C-" ;;
+        5[7-9]) echo "Your final grade is D+" ;;
+        5[3-6]) echo "Your final grade is D" ;;
+        5[0-2]) echo "Your final grade is D-" ;;
+        *) echo "Your final grade is F" ;;
+esac
